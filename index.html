@@ -1,190 +1,62 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Plateforme Éducative — Maquette</title>
-  <style>
-    /* Reset léger */
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html,body { height:100%; font-family: Inter, system-ui, Arial; color:#111; background:#f5f7fb; }
-
-    /* Container */
-    .container { max-width:1100px; margin:28px auto; padding:20px; }
-
-    /* Header / Navbar */
-    .nav { display:flex; align-items:center; justify-content:space-between; gap:12px; background:#fff; padding:14px 18px; border-radius:12px; box-shadow:0 6px 18px rgba(12,20,36,0.06); }
-    .brand { display:flex; align-items:center; gap:12px; text-decoration:none; color:inherit; }
-    .logo { width:44px; height:44px; background:linear-gradient(135deg,#4f46e5,#06b6d4); border-radius:10px; display:flex; align-items:center; justify-content:center; color:#fff; font-weight:700; }
-    nav .menu { display:flex; gap:10px; align-items:center; }
-    .btn { padding:8px 12px; border-radius:10px; background:#eef2ff; border:1px solid rgba(79,70,229,0.08); color:#3730a3; text-decoration:none; font-weight:600; }
-    .btn-ghost { background:transparent; border:none; padding:6px 8px; color:#374151; cursor:pointer; }
-    .search { background:#f3f4f6; padding:8px 12px; border-radius:10px; width:280px; border:1px solid #e6e9ef; }
-
-    /* Layout */
-    .grid { display:grid; grid-template-columns: 260px 1fr; gap:18px; margin-top:18px; }
-    /* Sidebar */
-    .sidebar { background:#fff; padding:16px; border-radius:12px; box-shadow:0 6px 18px rgba(12,20,36,0.04); }
-    .side-title { font-weight:700; margin-bottom:10px; color:#0f172a; }
-    .side-list { display:flex; flex-direction:column; gap:8px; }
-    .side-item { display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; text-decoration:none; color:#111; }
-    .side-item:hover { background:#f8fafc; }
-
-    /* Main */
-    .main { background:#fff; padding:18px; border-radius:12px; box-shadow:0 6px 18px rgba(12,20,36,0.04); min-height:360px; }
-    .hero { display:flex; justify-content:space-between; gap:12px; align-items:center; }
-    .hero-left h1 { font-size:20px; margin-bottom:6px; }
-    .hero-left p { color:#475569; font-size:14px; }
-    .cards { display:grid; grid-template-columns: repeat(3,1fr); gap:12px; margin-top:18px; }
-    .card { background:#f8fafc; padding:12px; border-radius:10px; min-height:90px; }
-
-    /* Quick actions */
-    .actions { display:flex; gap:8px; margin-top:16px; flex-wrap:wrap; }
-    .action-btn { background:#fff; border:1px solid #e6e9ef; padding:10px 12px; border-radius:10px; display:inline-flex; gap:8px; align-items:center; cursor:pointer; }
-
-    /* Table simple */
-    table { width:100%; border-collapse:collapse; margin-top:16px; }
-    th,td { padding:10px 8px; text-align:left; border-bottom:1px solid #eef1f6; font-size:14px; color:#0f172a; }
-
-    /* Footer */
-    .footer { text-align:center; color:#64748b; margin-top:18px; font-size:13px; }
-
-    /* Responsive */
-    @media (max-width:900px){
-      .grid { grid-template-columns:1fr; }
-      .cards { grid-template-columns: repeat(2,1fr); }
-      .search { width:160px; }
-    }
-    @media (max-width:520px){
-      .cards { grid-template-columns:1fr; }
-      .menu { display:none; }
-      .search { display:none; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Anonyme</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f7f7f7;
+            text-align: center;
+            padding: 30px;
+        }
+        .container {
+            background: white;
+            max-width: 400px;
+            padding: 20px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        textarea {
+            width: 100%;
+            height: 150px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        button {
+            background: #0080ff;
+            color: white;
+            border: none;
+            padding: 12px;
+            width: 100%;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #005fcc;
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <header class="nav" role="banner">
-      <a href="#" class="brand" aria-label="Accueil plateforme">
-        <div class="logo">PE</div>
-        <div>
-          <div style="font-weight:700">Plateforme Étudiante</div>
-          <div style="font-size:12px;color:#64748b">Apprendre • Partager • Réussir</div>
-        </div>
-      </a>
+    <div class="container">
+        <h2>Envoyer un message anonyme</h2>
 
-      <div style="display:flex;align-items:center;gap:10px;">
-        <input class="search" placeholder="Rechercher cours, prof, sujet..." aria-label="Recherche"/>
-        <nav class="menu" aria-label="Menu principal">
-          <a class="btn-ghost" href="#cours">Cours</a>
-          <a class="btn-ghost" href="#ressources">Ressources</a>
-          <a class="btn-ghost" href="#forum">Forum</a>
-          <a class="btn" href="#connexion">Se connecter</a>
-        </nav>
-      </div>
-    </header>
+        <form action="https://formsubmit.co/TON_EMAIL_ICI" method="POST">
+            
+            <!-- Empêche le spam -->
+            <input type="hidden" name="_captcha" value="false">
+            
+            <!-- Redirection après envoi -->
+            <input type="hidden" name="_next" value="https://ton-site.com/merci.html">
 
-    <main class="grid" role="main">
-      <!-- Sidebar -->
-      <aside class="sidebar" aria-labelledby="menu-title">
-        <div id="menu-title" class="side-title">Menu</div>
-        <div class="side-list">
-          <a class="side-item" href="#dashboard">🏠 Tableau de bord</a>
-          <a class="side-item" href="#cours">📚 Cours / Leçons</a>
-          <a class="side-item" href="#resources">📁 Ressources</a>
-          <a class="side-item" href="#evaluations">📝 Évaluations</a>
-          <a class="side-item" href="#planning">📆 Planning & Examens</a>
-          <a class="side-item" href="#forum">💬 Forum / Q&R</a>
-          <a class="side-item" href="#orientation">🔎 Orientation</a>
-          <a class="side-item" href="#administration">🏛️ Administration</a>
-          <a class="side-item" href="#annonces">📣 Offres & Bourses</a>
-          <a class="side-item" href="#contact">☎️ Contact / Aide</a>
-        </div>
-
-        <hr style="margin:14px 0;border:none;border-top:1px solid #eef1f6" />
-
-        <div style="font-weight:700;margin-bottom:8px;color:#0f172a">Actions rapides</div>
-        <div class="actions">
-          <button class="action-btn" onclick="alert('Créer un cours (démo)')">➕ Nouveau cours</button>
-          <button class="action-btn" onclick="alert('Téléverser une ressource (démo)')">⬆️ Téléverser</button>
-          <button class="action-btn" onclick="alert('Créer un quiz (démo)')">🧪 Créer éval.</button>
-          <button class="action-btn" onclick="alert('Envoyer message (démo)')">✉️ Message</button>
-        </div>
-      </aside>
-
-      <!-- Main content -->
-      <section class="main">
-        <div class="hero">
-          <div class="hero-left">
-            <h1>Bienvenue, Étudiant • Tableau de bord</h1>
-            <p>Accède à tes cours, suis ta progression et participe au forum.</p>
-          </div>
-          <div style="display:flex;gap:8px;align-items:center;">
-            <a class="btn" href="#mon-profil">Mon profil</a>
-            <a class="btn" href="#deconnexion" style="background:#fff;border:1px solid #e6e9ef;color:#ef4444">Se déconnecter</a>
-          </div>
-        </div>
-
-        <div class="cards" role="region" aria-label="Résumé rapide">
-          <div class="card">
-            <div style="font-weight:700">Progrès cours</div>
-            <div style="margin-top:8px;color:#475569">3/8 modules complétés</div>
-          </div>
-          <div class="card">
-            <div style="font-weight:700">Prochain examen</div>
-            <div style="margin-top:8px;color:#475569">Mathématiques — 10 déc. 2025</div>
-          </div>
-          <div class="card">
-            <div style="font-weight:700">Notifications</div>
-            <div style="margin-top:8px;color:#475569">2 messages non lus</div>
-          </div>
-        </div>
-
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:18px;">
-          <div style="font-weight:700">Cours récents</div>
-          <div style="color:#64748b;font-size:13px">Voir tout</div>
-        </div>
-
-        <table aria-label="Liste des cours">
-          <thead>
-            <tr>
-              <th>Cours</th>
-              <th>Enseignant</th>
-              <th>Progression</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Introduction à la Démographie</td>
-              <td>Pr. A. Ouédraogo</td>
-              <td>45%</td>
-              <td>
-                <button class="action-btn" onclick="alert('Ouvrir cours (démo)')">Ouvrir</button>
-                <button class="action-btn" onclick="alert('Télécharger PDF (démo)')">PDF</button>
-              </td>
-            </tr>
-            <tr>
-              <td>Statistiques appliquées</td>
-              <td>Dr. B. Zongo</td>
-              <td>20%</td>
-              <td>
-                <button class="action-btn" onclick="alert('Ouvrir cours (démo)')">Ouvrir</button>
-                <button class="action-btn" onclick="alert('Faire le quiz (démo)')">Quiz</button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-
-        <div style="display:flex;gap:12px;margin-top:16px;flex-wrap:wrap;">
-          <a class="btn" href="#forum">Aller au forum</a>
-          <a class="btn" href="#ressources">Bibliothèque</a>
-          <a class="btn" href="#orientation">Conseils d'orientation</a>
-        </div>
-      </section>
-    </main>
-
-    <div class="footer">© 2025 Plateforme Étudiante — Conçue pour l'apprentissage</div>
-  </div>
+            <textarea name="message" placeholder="Écris ton message ici..." required></textarea>
+            <button type="submit">Envoyer anonymement</button>
+        </form>
+    </div>
 </body>
 </html>
